@@ -1,0 +1,66 @@
+body{
+  width: 100%;
+  height: 100vh;
+}
+.contaner {
+  width: 98%;
+  height: 90vh;
+  margin: 0 auto;
+}
+/* ================= 
+ margin-top: 0px;
+    content: "";
+    
+    to
+estilo da foto =============*/
+.profile-photo {
+  width: 7rem;
+  aspect-ratio: 10/10;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.cima{
+  margin-top: 10px;
+  margin-left: 1160px;
+}
+#cima{
+  margin-top: -5px;
+  margin-left: 1160px;
+}
+.menus{
+  margin-top: 10px;
+}
+#home:hover, #sair:hover{
+  background-color:#dc3545;
+}
+.formulario{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: -50px;
+}
+.col{
+  display: flex;
+  justify-content: center;
+}
+.pesquisarInput{
+  width: 100%;
+  border-bottom: 2px solid #007bff;
+}
+.direita{
+  display: block;
+  margin-left: 40px;
+}
+.cor{
+  text-align: center;
+  color:#007bff;
+}
+.barra{
+  margin-top: 20px;
+  border-bottom: 4px solid #007bff;
+  z-index: 999;
+    position: sticky;
+}
+p{
+  color: #007bff;
+}
