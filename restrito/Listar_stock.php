@@ -1,6 +1,16 @@
 <?php 
 include '../protecao.php';
 #recuperar o id do funcionario
+ # pesquisando pelo usuario...
+ $pesquisar=$_POST['buscar'] ?? '';
+ # chamando a conexao e a funcao...
+include 'Conexao/connection.php';
+include 'Control/funcoes.php';
+//pegar os dados apartir do banco de dados
+$sql="SELECT * FROM `ventrada`  WHERE MEDICAMENTO  LIKE '%$pesquisar%'";
+//executar a query que ira ser declarado uma variavel que ira receber a conexao e os dados do banco de dados
+//esta variavel ira receber todos os objectos do banco de dados
+$dados=mysqli_query($conn,$sql); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -199,20 +209,6 @@ include '../protecao.php';
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    <!--codigo php -->
-    <?php
-      # pesquisando pelo usuario...
-      $pesquisar=$_POST['buscar'] ?? '';
-       # chamando a conexao e a funcao...
-     include 'Conexao/connection.php';
-     include 'Control/funcoes.php';
-    //pegar os dados apartir do banco de dados
-     $sql="SELECT * FROM `ventrada`  WHERE MEDICAMENTO  LIKE '%$pesquisar%'";
-     //executar a query que ira ser declarado uma variavel que ira receber a conexao e os dados do banco de dados
-     //esta variavel ira receber todos os objectos do banco de dados
-     $dados=mysqli_query($conn,$sql); 
-    ?>
     <div class="container">
         <!--LINHA-->
         <div class="row">
@@ -229,7 +225,6 @@ include '../protecao.php';
                 <table class="table table-hover">
                     <theard>
                         <tr>
-                            <th scope="col">Codigo</th>
                             <th scope="col">Medicamanto</th>
                             <th scope="col">Quantidade</th>
                             <th scope="col">Preço</th>
@@ -256,7 +251,6 @@ include '../protecao.php';
                         $NOME_FUNCIONARIO=$linha['NOME_FUNCIONARIO'];
                         
                         echo " <tr>
-                        <th scope='row'>$CODIGO_ENTRADA</th>
                         <th>$MEDICAMENTO/$DESCRICAO/$CATEGORIA</th>
                         <th >$QUANTIDADE</th>
                         <th >$PRECO</th>
